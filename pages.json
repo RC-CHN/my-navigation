@@ -1,21 +1,24 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
+		    "path" : "pages/index/index-day",
+			"title":"ybbgle",
+		    "style" :                                                                                    
+		    {
+		        "navigationStyle":"custom",
+				"navigationBarTitleText":"Ybbgle"
+		    }
+		    
+		},
+		{
 			"path": "pages/index/index",
+			"title":"ybbgle",
 			"style": {
-				"navigationStyle":"custom"
-				
+				"navigationStyle":"custom",
+				"navigationBarTitleText":"Ybbgle"
 				
 			}
 		}
-	    ,{
-            "path" : "pages/index/index-day",
-            "style" :                                                                                    
-            {
-                "navigationStyle":"custom"
-            }
-            
-        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "custom",

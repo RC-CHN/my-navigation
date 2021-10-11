@@ -14,6 +14,7 @@
 				{
 					'url': "https://github.com/",
 					'title': 'Github',
+					'icon': "../../static/web_icons/Github.png"
 				},
 				{
 					'url': "https://www.bilibili.com",
@@ -22,7 +23,7 @@
 				{
 					'url': "http://m.rcfortress.site:996/#/",
 					'title': "ybb计算器",
-					'icon': "../../static/favicon.png"
+					'icon': "../../static/web_icons/Sspai.png"
 				},
 				{
 					'url': "http://m.rcfortress.site:81/login",
