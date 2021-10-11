@@ -4,12 +4,17 @@
 			<image src="../../static/Logo.png" class="logo"></image>
 		</view>
 		<view class="search-bar">
-			<input class="search-bar-input" autofocus="autofocus" placeholder="search everything ...">
-			<button class="search-bar-button" style="margin-left: 185px;" onclick="do_google_search()">Google</button>
-			<button class="search-bar-button" onclick="do_bing_search()">手气不错</button>
+			<input class="search-bar-input" autofocus="autofocus" placeholder="搜索一下..."
+				placeholder-style="font-family: 'Jetbrains Mono';" v-model="searchText" @input="searchLog">
+			<button class="search-bar-button" style="margin-left: 185px;" @click="searchBing">Bing</button>
+			<button class="search-bar-button" @click="searchBaidu">Baidu</button>
 		</view>
 		<view class="nav-panel">
-
+			<urlItem v-for="content in sites" v-bind:content="content"></urlItem>
+			<!-- <view class="nav-panel-item" title="Bilibili" href="https://www.bilibili.com/" target="_blank">
+			        <image src="https://www.bilibili.com/favicon.ico" alt="Bilibili" height="16" width="16" class="nav-panel-item-img">
+			        <view class="nav-panel-item-txt">Bilibili</view>
+			    </view> -->
 		</view>
 	</view>
 </template>
@@ -18,13 +23,71 @@
 	export default {
 		data() {
 			return {
-				title: 'Hello'
+				title: 'Hello',
+				searchText: "",
+				sites: [{
+						'url': "https://cas.hdu.edu.cn/",
+						'title': '数字杭电',
+						'icon': '../../static/web_icons/HDU.png'
+					},
+					{
+						'url': "https://gitee.com",
+						'title': 'Gitee',
+					},
+					{
+						'url': "https://github.com/",
+						'title': 'Github',
+					},
+					{
+						'url': "https://www.bilibili.com",
+						'title': "Bilibili"
+					},
+					{
+						'url': "http://m.rcfortress.site:996/#/",
+						'title': "ybb计算器",
+						'icon': "../../static/favicon.png"
+					},
+					{
+						'url': "http://m.rcfortress.site:81/login",
+						'title': "Unraid管理页面",
+						'icon': "../../static/web_icons/unraid.png"
+					},
+					{
+						'url': "http://m.rcfortress.site:5000/",
+						'title': "群晖-杭州",
+						'icon': "../../static/web_icons/DSM.png",
+					},
+					{
+						'url': "https://nas.rcfortress.site:5001/",
+						'title': "群晖-湖州",
+						'icon': "../../static/web_icons/DSM.png"
+					},
+					{
+						'url': "http://m.rcfortress.site:9080",
+						'title': "Gitlab",
+					},
+					{
+						'url': "http://m.rcfortress.site:8443/login",
+						'title': "CodeServer",
+						'icon': "../../static/web_icons/code.png"
+					}
+				]
 			}
 		},
-		onLoad() {
-
-		},
+		onLoad() {},
 		methods: {
+			searchLog() {
+				console.log(this.$data.searchText)
+			},
+			searchBing(){
+				let searchUrl = "https://cn.bing.com/search?q=" + this.$data.searchText
+				window.open(searchUrl);
+			},
+			searchBaidu(){
+				let searchUrl = "https://www.baidu.com/s?wd=" + this.$data.searchText
+				window.open(searchUrl);
+			}
+			
 
 		}
 	}
@@ -36,6 +99,7 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+		font-family: 'Jetbrains Mono';
 	}
 
 	.logo {
@@ -84,7 +148,7 @@
 		vertical-align: middle;
 		outline: none;
 		cursor: pointer;
-		border-radius: 2px;
+		border-radius: 5px;
 		background-color: rgb(20, 162, 245);
 		display: inline-block;
 	}
@@ -95,51 +159,20 @@
 	}
 
 	.nav-panel {
-		margin-top: 20px;
-		margin-bottom: 100px;
-		width: 840px;
-		height: 485px;
+		margin-top: 20rpx;
+		/* margin-bottom: 100px; */
+		width: 80%;
+		min-height: 600rpx;
 		margin-left: auto;
 		margin-right: auto;
 		padding-left: 30px;
 		padding-top: 10px;
 		background-color: rgb(58, 58, 62);
 		border-radius: 10px;
-
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+		gap: 10rpx;
 	}
-
-	/* 
-	.nav-panel-line {
-		clear: both;
-		width: 810px;
-		height: 1px;
-		background-color: rgb(62, 61, 65);
-	}
-
-	.nav-panel-item {
-		float: left;
-		display: block;
-		height: 40px;
-		width: 160px;
-		border: 1px solid transparent;
-		text-decoration: none;
-		color: rgb(255, 255, 255);
-	}
-
-	.nav-panel-item:hover {
-		background-color: rgb(55, 55, 60);
-	}
-
-	.nav-panel-item-img {
-		float: left;
-		margin-top: 12px;
-		margin-left: 15px;
-	}
-
-	.nav-panel-item-txt {
-		float: left;
-		margin-left: 5px;
-		line-height: 40px;
-		height: 40px;
-	} */
 </style>
