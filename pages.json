@@ -4,9 +4,19 @@
 			"path": "pages/index/index",
 			"style": {
 				"navigationStyle":"custom"
+				
+				
 			}
 		}
-	],
+	    ,{
+            "path" : "pages/index/index-day",
+            "style" :                                                                                    
+            {
+                "navigationStyle":"custom"
+            }
+            
+        }
+    ],
 	"globalStyle": {
 		"navigationBarTextStyle": "custom",
 		"navigationBarTitleText": "uni-app",

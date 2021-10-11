@@ -12,7 +12,7 @@
 			<button class="search-bar-button" @click="searchBaidu">Baidu</button>
 		</view>
 		<view class="nav-panel">
-			<urlItem v-for="content in sites" v-bind:content="content"></urlItem>
+			<urlItemDay v-for="content in sites" v-bind:content="content"></urlItemDay>
 			<!-- <view class="nav-panel-item" title="Bilibili" href="https://www.bilibili.com/" target="_blank">
 			        <image src="https://www.bilibili.com/favicon.ico" alt="Bilibili" height="16" width="16" class="nav-panel-item-img">
 			        <view class="nav-panel-item-txt">Bilibili</view>
@@ -36,7 +36,7 @@
 		methods: {
 			changeMode(){
 				uni.redirectTo({
-					url:'./index-day'
+					url:'./index'
 				})
 			},
 			searchLog() {
@@ -58,7 +58,7 @@
 
 <style>
 	page {
-		background-color: rgb(33, 33, 37);
+		background-color: #ffffff;
 		height: 100%;
 	}
 	.buttonBox{
@@ -101,7 +101,8 @@
 		outline: none;
 		vertical-align: middle;
 		border-radius: 2px;
-		background-color: rgb(222, 222, 222);
+		background-color: #FFFFFF;
+		box-shadow:  2px 5px 5px 5px #d1d1d1;
 	}
 
 	.search-bar-button {
@@ -123,6 +124,25 @@
 		border-radius: 5px;
 		background-color: rgb(20, 162, 245);
 		display: inline-block;
+		/* margin-top: 20px;
+		margin-left: 20px;
+		width: 105px;
+		height: 35px;
+		line-height: 35px;
+		overflow: hidden;
+		text-align: center;
+		font-size: 15px;
+		font-weight: bold;
+		color: #007AFF;
+		border-color: #007AFF;
+		border:1px solid;
+		overflow: hidden;
+		vertical-align: middle;
+		outline: none;
+		cursor: pointer;
+		border-radius: 5px;
+		background-color: #FFFFFF;
+		display: inline-block; */
 	}
 
 	.search-bar-button:hover {
@@ -141,12 +161,13 @@
 		margin-right: auto;
 		padding-left: 30px;
 		padding-top: 10px;
-		background-color: rgb(58, 58, 62);
+		background-color:#FFFFFF;
 		border-radius: 10px;
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
 		justify-content: flex-start;
 		gap: 10rpx;
+		box-shadow:  2px 5px 5px 5px #d1d1d1;
 	}
 </style>
