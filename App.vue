@@ -13,5 +13,10 @@
 </script>
 
 <style>
+	page {
+		background-color: rgb(33, 33, 37);
+		height: 100%;
+	}
+
 	/*每个页面公共css */
 </style>
