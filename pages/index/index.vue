@@ -1,12 +1,14 @@
 <template>
 	<view class="content">
 		<view>
-			<image src="../../static/Logo.png" class="logo"></image>
+			<image src="../../static/logo.png" class="logo"></image>
 		</view>
 		<view class="search-bar">
 			<input class="search-bar-input" autofocus="autofocus" placeholder="搜索一下..."
 				placeholder-style="font-family: 'Jetbrains Mono';" v-model="searchText" @input="searchLog">
-			<button class="search-bar-button" style="margin-left: 185px;" @click="searchBing">Bing</button>
+		</view>
+		<view class="buttonBox">
+			<button class="search-bar-button" style="" @click="searchBing">Bing</button>
 			<button class="search-bar-button" @click="searchBaidu">Baidu</button>
 		</view>
 		<view class="nav-panel">
@@ -94,6 +96,9 @@
 </script>
 
 <style>
+	.buttonBox{
+		margin-bottom: 40rpx;
+	}
 	.content {
 		display: flex;
 		flex-direction: column;
@@ -114,6 +119,7 @@
 		height: 100px;
 		margin-left: auto;
 		margin-right: auto;
+		margin-bottom: -100rpx;
 
 	}
 
